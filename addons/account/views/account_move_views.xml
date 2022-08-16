@@ -686,8 +686,7 @@
 
                                 <field name="date" string="Accounting Date"
                                        attrs="{
-                                            'invisible': [('move_type', 'in', ('out_invoice', 'out_refund', 'out_receipt'))],
-                                            'readonly': [('state', '!=', 'draft')],
+                                            'readonly': ['|', ('state', '!=', 'draft'), ('move_type', 'in', ('out_invoice', 'out_refund', 'out_receipt'))],
                                        }"/>
 
                                 <!-- Invoice payment terms (only invoices) + due date (only invoices / receipts) -->
